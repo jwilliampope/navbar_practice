@@ -1,0 +1,77 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(https://images7.alphacoders.com/101/thumb-1920-1014834.jpg);
+  background-size: cover;
+  background-position: center center;
+  height: 100vh;
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  color: #fff;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.875em;
+}
+
+.logo {
+  cursor: pointer;
+}
+
+.nav-area {
+  list-style: none;
+}
+
+.nav-area li {
+  display: inline-block;
+  padding: 0 15px;
+  text-transform: uppercase;
+}
+
+.nav-area li a {
+  transition: 0.3s;
+  color: #fff;
+}
+
+.nav-area li a:hover {
+  color: #ff0000;
+}
+
+.btn-area {
+  cursor: pointer;
+  color: #fff;
+  font-size: 2rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 10px 30px;
+  background: lightskyblue;
+  border-radius: 5px;
+}
+
+@media (max-width: 900px) {
+  body {
+    background-image: url(https://isardasorensen.files.wordpress.com/2015/05/tp-sweeping-pink-sunset-skies-5-28-15.jpg?w=426&h=245);
+  }
+
+  .btn-area {
+    font-size: 1rem;
+  }
+
+  .nav-area li {
+    display: block;
+  }
+}
