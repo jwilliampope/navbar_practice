@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css?family=Work+Sans:300,600");
+
 :root {
-  --background: rgba(0, 214, 170, 0.85);
+  --background: #000080;
 }
 
 *,
@@ -11,20 +13,22 @@
 body {
   margin: 0;
   background: #222;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-weight: 400;
+  color: #fff;
 }
 
 .content {
   height: 200vh;
-  background-image: url(../img/tech.jpg);
+  background-image: url(//unsplash.it/1000/1000);
+  background-color: #333;
   background-blend-mode: multiply;
   background-size: cover;
   display: grid;
   place-items: center;
 }
 
-/* navigation styles */
+/* navigation styles start here */
 
 header {
   background: var(--background);
@@ -34,10 +38,12 @@ header {
   width: 100%;
 }
 
+/* changed this from the tutorial video to
+   allow it to gain focus, making it tabbable */
 .nav-toggle {
   position: absolute !important;
-  top: -999px !important;
-  left: -999px !important;
+  top: -9999px !important;
+  left: -9999px !important;
 }
 
 .nav-toggle:focus ~ .nav-toggle-label {
@@ -58,7 +64,7 @@ header {
 .nav-toggle-label span::before,
 .nav-toggle-label span::after {
   display: block;
-  background: #fff;
+  background: white;
   height: 2px;
   width: 2em;
   border-radius: 2px;
@@ -103,7 +109,7 @@ nav li {
 }
 
 nav a {
-  color: #fff;
+  color: white;
   text-decoration: none;
   font-size: 1.2rem;
   text-transform: uppercase;
@@ -116,8 +122,12 @@ nav a:hover {
 }
 
 .nav-toggle:checked ~ nav {
+  transform: scale(1, 1);
+}
+
+.nav-toggle:checked ~ nav a {
   opacity: 1;
-  transition: opacity 25oms ease-in-out 250ms;
+  transition: opacity 250ms ease-in-out 250ms;
 }
 
 @media screen and (min-width: 800px) {
@@ -131,17 +141,33 @@ nav a:hover {
   }
 
   .logo {
-    grid-column: 2/3;
+    grid-column: 2 / 3;
   }
 
   nav {
-    grid-column: 3/4;
+    // all: unset; /* this causes issues with Edge, since it's unsupported */
+
+    /* the following lines are not from my video, but add Edge support */
+    position: relative;
+    text-align: left;
+    transition: none;
+    transform: scale(1, 1);
+    background: none;
+    top: initial;
+    left: initial;
+    /* end Edge support stuff */
+
+    grid-column: 3 / 4;
     display: flex;
     justify-content: flex-end;
     align-items: center;
   }
 
   nav ul {
+    display: flex;
+  }
+
+  nav li {
     margin-left: 3em;
     margin-bottom: 0;
   }
@@ -165,6 +191,6 @@ nav a:hover {
   }
 
   nav a:hover::before {
-    tarnsform: scale(1, 1);
+    transform: scale(1, 1);
   }
 }
