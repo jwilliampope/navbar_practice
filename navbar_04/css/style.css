@@ -42,7 +42,7 @@ body {
   position: absolute;
   top: 0.75rem;
   right: 1rem;
-  display: one;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   width: 30px;
