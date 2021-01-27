@@ -1,3 +1,7 @@
+:root {
+  --background: rgba(85, 214, 178, 0.85);
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
